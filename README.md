@@ -126,3 +126,11 @@ Start the new service using **docker-compose up** command
 ```shell
 sudo docker-compose -f docker-compose.yml up --quiet-pull -d qcobjects
 ```
+
+# Remove the env-file
+
+You can safely remove the env-file after you've started the server using **docker-compose up** command
+
+```shell
+rm -f ./env-file
+```
