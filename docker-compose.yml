@@ -1,0 +1,20 @@
+version: '2'
+services:
+  qcobjects:
+    image: qcobjects_newapp:latest
+    privileged: true
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - letsencrypt:/etc/letsencrypt/live/newapp.qcobjects.dev
+    expose:
+      - "80"
+      - "443"
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file:
+      - env-file
+volumes:
+  letsencrypt:
